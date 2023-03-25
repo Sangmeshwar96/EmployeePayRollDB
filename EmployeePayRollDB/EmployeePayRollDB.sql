@@ -40,3 +40,15 @@ SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'employee_payroll';
 UPDATE employee_payroll SET Gender = 'M' WHERE name = 'Bill' or name = 'Charlie';
 UPDATE employee_payroll SET Gender = 'F' WHERE name = 'Terissa';
 SELECT * FROM employee_payroll;
+
+--UC7
+--Sum of salary of all males
+SELECT SUM(salary) AS SumOfSalaryOfMale FROM employee_payroll WHERE Gender = 'M' GROUP BY Gender
+--Average salary according to gender
+SELECT AVG(salary) AS AvgSalaryOfGender, Gender FROM employee_payroll GROUP BY Gender;
+--Minimum salary according to gender
+SELECT MIN(salary) AS MinSalary, Gender FROM employee_payroll GROUP BY Gender;
+--Maximum salary acording to gender
+SELECT MAX(salary)AS MaxSalary, Gender FROM employee_payroll GROUP BY Gender;
+--Employee count according to gender
+SELECT COUNT(Gender) AS CountOfGender, Gender FROM employee_payroll GROUP BY Gender;

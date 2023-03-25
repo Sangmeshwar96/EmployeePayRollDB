@@ -23,6 +23,7 @@ INSERT INTO employee_payroll VALUES
 ('Bill',100000.00,'2018-01-03'),
 ('Terissa',200000.00,'2019-11-13'),
 ('Charlie',300000.00,'2020-05-21');
+SELECT * FROM employee_payroll;
 
 --UC4
 --Selecting all columns and rows of table
@@ -52,3 +53,11 @@ SELECT MIN(salary) AS MinSalary, Gender FROM employee_payroll GROUP BY Gender;
 SELECT MAX(salary)AS MaxSalary, Gender FROM employee_payroll GROUP BY Gender;
 --Employee count according to gender
 SELECT COUNT(Gender) AS CountOfGender, Gender FROM employee_payroll GROUP BY Gender;
+
+--UC8
+--Add additional Employee information columns
+ALTER TABLE employee_payroll ADD phone_number varchar(13)
+ALTER TABLE employee_payroll ADD address varchar(250), department varchar(20)
+--Add department for existing enteries
+UPDATE employee_payroll SET department = 'Sales' WHERE id in (1 , 3);
+UPDATE employee_payroll SET department = 'Marketting' WHERE id = 2;

@@ -16,3 +16,10 @@ Name VARCHAR(25) not null,
 Salary MONEY not null,
 Start DATE not null
 );
+
+--UC3
+--Inserting data in table
+INSERT INTO employee_payroll VALUES
+('Bill',100000.00,'2018-01-03'),
+('Terissa',200000.00,'2019-11-13'),
+('Charlie',300000.00,'2020-05-21');

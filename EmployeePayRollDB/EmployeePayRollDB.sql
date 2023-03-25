@@ -31,3 +31,12 @@ SELECT * FROM employee_payroll;
 --UC5
 --Selecting salary of Bill
 SELECT salary FROM employee_payroll WHERE Name = 'Bill';
+
+--UC6
+--Add extra column of gender
+ALTER TABLE employee_payroll ADD Gender CHAR;
+SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'employee_payroll';
+--Update gender of employees
+UPDATE employee_payroll SET Gender = 'M' WHERE name = 'Bill' or name = 'Charlie';
+UPDATE employee_payroll SET Gender = 'F' WHERE name = 'Terissa';
+SELECT * FROM employee_payroll;

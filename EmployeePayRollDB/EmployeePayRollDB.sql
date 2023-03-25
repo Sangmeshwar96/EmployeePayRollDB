@@ -27,3 +27,7 @@ INSERT INTO employee_payroll VALUES
 --UC4
 --Selecting all columns and rows of table
 SELECT * FROM employee_payroll;
+
+--UC5
+--Selecting salary of Bill
+SELECT salary FROM employee_payroll WHERE Name = 'Bill';
